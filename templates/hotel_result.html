@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    Guest name: {{ guest_name }}<br>
+    Room number: {{ room_number }}<br>
+    Notification from guest: {{ notification_from_guest }}<br>
+    Priority: {{ priority }}
+    {% if notification_info.code == 'high' %}
+        <h1>Critical notification content</h1>
+    {% elif notification_info.code == 'medium' %}
+        <h1>Important notification content</h1>
+    {% elif notification_info.code == 'normal' %}
+        <h1>Notification content</h1>
+    {% endif %}
+{% endblock %}
+
